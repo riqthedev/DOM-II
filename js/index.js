@@ -3,19 +3,21 @@ const funBus = document.querySelector("h1")
 const header = document.querySelector(".inverse-content h2")
 const aboutLink = document.querySelector(".nav-link:nth-of-type(2)")
 const homeLink = document.querySelector(".nav-link:nth-of-type(1)")
+const header2 = document.querySelector("h2")
+const button = document.querySelector(".btn")
 
-
-// Mouse Over
+// Mouse Over √
 
 function mouseOver (event){
     funBus.style.color = "Yellow"
     funBus.textContent = "Double Click"
+    
 }
 funBus.addEventListener("mouseover", mouseOver)
 //
 
 
-// Double Click
+// Double Click √
 
 function doubleClick(event){
     funBus.style.color = "red"
@@ -24,20 +26,22 @@ function doubleClick(event){
 funBus.addEventListener("dblclick", doubleClick)
 //
 
-// Key Down !!!!!!!!
+// Key Down √
 
 function key(event){
     funBus.textContent = `${event.code}`
     header.textContent = "Zoom in or out"
     header.style.color = "Orange"
     aboutLink.textContent = "Click"
+
+    
 }
 document.addEventListener("keydown", key)
 
 //
 
 
-// Wheel 
+// Wheel √
 
 function zoom(event){
     event.preventDefault();
@@ -50,17 +54,18 @@ image.onwheel = zoom
 //
 
 
-// Load
+// Load √
 
 function load(event){
-    console.log("fully Loaded")
+    document.body.style.color = "gray"
+    
 }
 window.addEventListener("load",load)
 //
 
 
 
-// Focus !!!!!!!!
+// Focus √
 function focus(event){
     document.querySelector(".nav-link:nth-of-type(2)").focus();
     homeLink.textContent = "focused"
@@ -70,7 +75,7 @@ function focus(event){
    aboutLink.addEventListener('focus', focus)
 //
 
-// Resize
+// Resize √
 function reportWindowSize(event) {
     homeLink.textContent = window.innerHeight;
     aboutLink.textContent = window.innerWidth;
@@ -79,7 +84,37 @@ function reportWindowSize(event) {
   }
 window.onresize = reportWindowSize; 
 window.addEventListener('resize', reportWindowSize);
+//
 
 
 
+//  Click √
 
+function click(event){
+    header2.style.color = "teal"
+    
+}
+
+header2.addEventListener("click",click)
+
+//
+
+
+// Scroll √
+function onScroll(event){
+    
+    button.style.color = "black"
+    button.style.backgroundColor = "Pink"
+    button.textContent = " Stop!!!"
+}
+document.addEventListener("scroll",onScroll)
+//
+
+
+//
+
+function mouseOut(event){
+    header2.style.color = "red";
+    
+}
+header2.addEventListener('mouseout',mouseOut)
